@@ -18,12 +18,21 @@ MetaForm runs as a Shopify app with a backend API, GitHub OAuth, and optional de
 
 ## Screenshots
 
-| | |
-|---|---|
-| **Settings** — GitHub OAuth credentials, repository, branch, file path, and optional sync source. | **Definitions** — Browse all metafield and metaobject definitions on the store. |
-| ![Settings page: GitHub credentials and connection, repo/branch, sync source](media/CleanShot%202026-02-16%20at%2005.06.45.png) | ![Definitions page: Metafields and Metaobjects tabs with search and filters](media/CleanShot%202026-02-16%20at%2005.07.05.png) |
-| **Sync Data** — Review changes from source (added, modified, removed) and create a branch + PR to promote. | **Sync Data (changes)** — Detailed view of added metafields and metaobjects before applying. |
-| ![Sync Data: sync source, changes summary, create branch and open PR](media/CleanShot%202026-02-16%20at%2005.08.17.png) | ![Sync Data: added metafields and metaobjects tables](media/CleanShot%202026-02-16%20at%2005.09.00.png) |
+**Settings** — GitHub OAuth credentials, repository, branch, file path, and optional sync source.
+
+![Settings page: GitHub credentials and connection, repo/branch, sync source](media/CleanShot%202026-02-16%20at%2005.06.45.png)
+
+**Definitions** — Browse all metafield and metaobject definitions on the store.
+
+![Definitions page: Metafields and Metaobjects tabs with search and filters](media/CleanShot%202026-02-16%20at%2005.07.05.png)
+
+**Sync Data** — Review changes from source (added, modified, removed) and create a branch + PR to promote.
+
+![Sync Data: sync source, changes summary, create branch and open PR](media/CleanShot%202026-02-16%20at%2005.08.17.png)
+
+**Sync Data (changes)** — Detailed view of added metafields and metaobjects before applying.
+
+![Sync Data: added metafields and metaobjects tables](media/CleanShot%202026-02-16%20at%2005.09.00.png)
 
 ---
 
