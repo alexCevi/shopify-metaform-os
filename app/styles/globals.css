@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles and utilities for MetaForm */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 210 79% 46%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 210 79% 46%;
+    --radius: 0.5rem;
+
+    /* Additional custom properties */
+    --transition-fast: 100ms ease;
+    --transition-base: 200ms ease;
+    --transition-slow: 300ms ease;
+    
+    /* Z-index scale */
+    --z-base: 1;
+    --z-dropdown: 100;
+    --z-modal: 200;
+    --z-toast: 300;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Focus states */
+*:focus-visible {
+  outline: 2px solid var(--s-color-interactive, #2c6ecb);
+  outline-offset: 2px;
+}
+
+/* Button: shadcn-like hover, focus, disabled (inline styles set base look; these add interaction) */
+.btn {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.btn:hover:not(:disabled) {
+  filter: brightness(0.97);
+}
+.btn:active:not(:disabled) {
+  filter: brightness(0.94);
+}
+.btn:focus-visible {
+  outline: 2px solid var(--s-color-interactive, #2c6ecb);
+  outline-offset: 2px;
+}
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Smooth transitions */
+button,
+input,
+select,
+textarea,
+a {
+  transition: all var(--transition-fast);
+}
+
+/* Utility classes */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Skeleton loading animation */
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn var(--transition-base);
+}
+
+.animate-slideUp {
+  animation: slideUp var(--transition-base);
+}
+
+.animate-slideDown {
+  animation: slideDown var(--transition-base);
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Layout utilities */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.stack-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stack-horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+}
+
+/* Remove default margins */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+/* Improve readability */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--s-color-bg-surface-subdued, #fafbfb);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--s-color-border, #c9cccf);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--s-color-border-hover, #adadad);
+}

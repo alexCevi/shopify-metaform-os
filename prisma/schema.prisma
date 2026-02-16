@@ -1,0 +1,74 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Note that some adapters may set a maximum length for the String type by default, please ensure your strings are long
+// enough when changing adapters.
+// See https://www.prisma.io/docs/orm/reference/prisma-schema-reference#string for more information
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Session {
+  id            String    @id
+  shop          String
+  state         String
+  isOnline      Boolean   @default(false)
+  scope         String?
+  expires       DateTime?
+  accessToken   String
+  userId        BigInt?
+  firstName     String?
+  lastName      String?
+  email         String?
+  accountOwner  Boolean   @default(false)
+  locale        String?
+  collaborator  Boolean?  @default(false)
+  emailVerified Boolean?  @default(false)
+  refreshToken        String?
+  refreshTokenExpires DateTime?
+}
+
+model AppConfig {
+  id                 String   @id @default("singleton")
+  encryptionKey      String
+  githubClientId     String?
+  githubClientSecret String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}
+
+model GitHubConnection {
+  id               String   @id @default(cuid())
+  shop             String   @unique
+  accessToken      String
+  owner            String
+  repo             String
+  branch           String   @default("main")
+  filePath         String   @default("metaform/definitions.json")
+  autoImport       Boolean  @default(false)
+  lastPushedSha    String?
+  lastPulledSha    String?
+  lowerEnvOwner    String?
+  lowerEnvRepo     String?
+  lowerEnvBranch   String?
+  lowerEnvFilePath String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model SyncLog {
+  id        String   @id @default(cuid())
+  shop      String
+  action    String
+  commitSha String?
+  summary   String
+  detail    String?
+  createdAt DateTime @default(now())
+
+  @@index([shop, createdAt])
+}

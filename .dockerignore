@@ -1,0 +1,63 @@
+# Dependencies
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json.backup
+
+# Build outputs
+build
+dist
+.cache
+.output
+.vite
+
+# Testing
+coverage
+.nyc_output
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+__tests__
+test
+tests
+
+# Environment
+.env.local
+.env.*.local
+.env.development
+.env.test
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+.cursor
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# CI/CD
+.github
+.gitlab-ci.yml
+.travis.yml
+
+# Documentation
+*.md
+!README.md
+docs
+documentation
+
+# Misc
+.eslintcache
+.prettierignore
+tmp
+temp
+*.log
