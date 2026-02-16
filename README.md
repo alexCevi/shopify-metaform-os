@@ -1,8 +1,8 @@
 # MetaForm
 
-**Config-as-code for Shopify metafields and metaobjects.**
+**Config-as-code for Shopify metafields and metaobjects.** Inspired roughly by Terraform and platforms like Vercel.
 
-Sync definitions across environments with GitHub. Push from your store, promote via Pull Requests, pull into any store — with a full diff before you apply.
+Sync definitions across environments with GitHub. Push from your store, promote via Pull Requests, pull into any store, with a full diff before you apply.
 
 MetaForm is built for teams running **dev → UAT → production** who need metafield and metaobject definitions to stay in sync without manual copy-paste or drift.
 
@@ -18,19 +18,19 @@ MetaForm runs as a Shopify app with a backend API, GitHub OAuth, and optional de
 
 ## Screenshots
 
-**Settings** — GitHub OAuth credentials, repository, branch, file path, and optional sync source.
+**Settings:** GitHub OAuth credentials, repository, branch, file path, and optional sync source.
 
 ![Settings page: GitHub credentials and connection, repo/branch, sync source](media/CleanShot%202026-02-16%20at%2005.06.45.png)
 
-**Definitions** — Browse all metafield and metaobject definitions on the store.
+**Definitions:** Browse all metafield and metaobject definitions on the store.
 
 ![Definitions page: Metafields and Metaobjects tabs with search and filters](media/CleanShot%202026-02-16%20at%2005.07.05.png)
 
-**Sync Data** — Review changes from source (added, modified, removed) and create a branch + PR to promote.
+**Sync Data:** Review changes from source (added, modified, removed) and create a branch + PR to promote.
 
 ![Sync Data: sync source, changes summary, create branch and open PR](media/CleanShot%202026-02-16%20at%2005.08.17.png)
 
-**Sync Data (changes)** — Detailed view of added metafields and metaobjects before applying.
+**Sync Data (changes):** Detailed view of added metafields and metaobjects before applying.
 
 ![Sync Data: added metafields and metaobjects tables](media/CleanShot%202026-02-16%20at%2005.09.00.png)
 
